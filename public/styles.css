@@ -100,3 +100,5 @@ html[data-theme="dark"] .topbar,html[data-theme="dark"] .tabs,html[data-theme="d
 .language-options strong,.language-options small{overflow-wrap:anywhere}
 @media(max-width:760px){.page-heading p{font-size:16px!important}.document-body,#body-editor{font-size:17px}.table-scroll table,.table-title strong{font-size:15px}.table-title small,td small{font-size:13px}.scroll-tabs{gap:0 20px}}
 @media(max-width:510px){.language-options{grid-template-columns:1fr}.page-heading p{font-size:15px!important}}
+/* Keep the sign-in promise prominent without repeating it beneath the headline. */
+.auth-footer{font-size:clamp(16px,1.15vw,20px);font-weight:700;line-height:1.3}
