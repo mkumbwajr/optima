@@ -85,3 +85,18 @@ html[data-theme="dark"] .topbar,html[data-theme="dark"] .tabs,html[data-theme="d
 .intro-copy h1{font-size:clamp(34px,4vw,60px);line-height:1.08;letter-spacing:-.04em}
 .intro-copy p{margin-top:16px;color:#eff7ed;font-size:var(--text-interface);line-height:1.45}
 @media(max-width:760px){.intro-topbar{padding:20px}.intro-logo{width:104px}.intro-copy{bottom:88px}.intro-copy h1{font-size:34px}.intro-skip{min-height:40px;padding:9px 12px}}
+
+/* Multilingual layout and final readability refinements. */
+.page-heading p{font-size:clamp(17px,1.05vw,19px);line-height:1.35;max-width:820px}
+.document-body,#body-editor{font-size:clamp(18px,1.12vw,20px);line-height:1.48}
+.document-body p{margin-bottom:13px}
+.paper-meta,.uniform-summary,.invoice-summary{font-size:clamp(16px,.98vw,18px)}
+.table-scroll table{font-size:clamp(15px,.92vw,17px)}
+.table-title strong{font-size:clamp(16px,.98vw,18px);line-height:1.35}
+.table-title small,td small{font-size:clamp(14px,.82vw,15px)}
+.scroll-tabs{overflow:visible;flex-wrap:wrap;row-gap:0}
+.language-options{grid-template-columns:repeat(3,minmax(0,1fr))}
+.language-options button{min-width:0}
+.language-options strong,.language-options small{overflow-wrap:anywhere}
+@media(max-width:760px){.page-heading p{font-size:16px!important}.document-body,#body-editor{font-size:17px}.table-scroll table,.table-title strong{font-size:15px}.table-title small,td small{font-size:13px}.scroll-tabs{gap:0 20px}}
+@media(max-width:510px){.language-options{grid-template-columns:1fr}.page-heading p{font-size:15px!important}}
