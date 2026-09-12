@@ -102,3 +102,84 @@ html[data-theme="dark"] .topbar,html[data-theme="dark"] .tabs,html[data-theme="d
 @media(max-width:510px){.language-options{grid-template-columns:1fr}.page-heading p{font-size:15px!important}}
 /* Keep the sign-in promise prominent without repeating it beneath the headline. */
 .auth-footer{font-size:clamp(16px,1.15vw,20px);font-weight:700;line-height:1.3}
+
+/* Responsive layout guardrails based on Elementor's fluid-section model. */
+:root{
+  --page-gutter:clamp(16px,3vw,46px);
+  --section-gap:clamp(16px,2vw,24px);
+  --title-fluid:clamp(28px,2vw + 16px,42px);
+  --heading-fluid:clamp(18px,.55vw + 15px,23px)
+}
+html,body{width:100%;max-width:100vw;overflow-x:clip}
+@supports not (overflow:clip){html,body{overflow-x:hidden}}
+.shell,.workspace,.topbar,main,.page-footer,.auth-page,.intro-page{min-width:0;max-width:100%}
+.workspace{width:auto;max-width:calc(100vw - var(--sidebar));overflow-x:clip}
+main{width:100%;padding-inline:var(--page-gutter)}
+.topbar,.page-footer{padding-inline:var(--page-gutter)}
+img,video,iframe,svg{max-width:100%}
+.dashboard-grid,.dashboard-primary,.dashboard-secondary,.overview-stats,.surface,.form-grid,.form-aside,.document-grid,.document-paper,.details-panel,.table-controls,.table-scroll,.section-heading,.page-heading,.form-actions{min-width:0;max-width:100%}
+.dashboard-grid,.form-grid,.document-grid{gap:var(--section-gap)}
+.overview-stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+.page-heading>*:first-child,.section-heading>*:first-child,.table-controls>*:first-child,.form-actions>*{min-width:0}
+.page-heading h1{font-size:var(--title-fluid);line-height:1.12;overflow-wrap:anywhere}
+.section-heading h2,.form-section h2,.details-panel h2{font-size:var(--heading-fluid);line-height:1.25;overflow-wrap:anywhere}
+.page-heading p,.section-heading p,.document-body,.table-title strong,.task-copy,.activity-row>span:nth-child(2),.quick-action>span:nth-child(2),.profile-details dd{overflow-wrap:anywhere}
+.table-scroll{width:100%;overflow-x:auto;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch}
+dialog{width:min(650px,calc(100vw - 32px));max-width:calc(100vw - 32px);padding:clamp(20px,3vw,28px);overflow-x:hidden}
+.auth-page{width:100%;max-width:100vw}
+.auth-story{padding:clamp(28px,4vw,65px)}
+.auth-headline{padding-block:clamp(48px,8vh,80px)}
+.auth-headline h1{font-size:clamp(38px,4vw,60px);line-height:1.12;letter-spacing:clamp(-2px,-.12vw,-1px)}
+.auth-form-wrap{padding:clamp(26px,4vw,50px)}
+.auth-form{max-width:100%}
+
+@media(min-width:981px){
+  .dashboard-grid{grid-template-columns:minmax(0,1fr) minmax(268px,20vw)}
+  .form-grid,.document-grid{grid-template-columns:minmax(0,1fr) minmax(230px,18vw)}
+}
+
+@media(max-width:760px){
+  .workspace{width:100%;max-width:100vw}
+  .sidebar{width:min(var(--sidebar),86vw)}
+  main{padding-inline:clamp(16px,5vw,20px)}
+  .topbar,.page-footer{padding-inline:clamp(14px,4vw,20px)}
+  .topbar-context{min-width:0}
+  .topbar-context strong{max-width:clamp(96px,29vw,180px);overflow:hidden;text-overflow:ellipsis}
+  .topbar-tools{margin-left:auto;gap:clamp(4px,1.8vw,10px)}
+  .page-heading,.section-heading,.table-controls,.form-actions,.dialog-head,.dialog-actions{flex-wrap:wrap}
+  .page-heading>*:first-child,.table-search{flex:1 1 100%}
+  .page-heading>.button{max-width:100%;white-space:normal}
+  .table-control-buttons{width:100%;flex-wrap:wrap}
+  .table-control-buttons .button{flex:1 1 auto}
+  .form-actions>div{width:100%;flex-wrap:wrap}
+  .form-actions>div>.button{flex:1 1 min(180px,100%);white-space:normal}
+  .auth-story{padding:clamp(20px,6vw,30px)}
+  .auth-form-wrap{padding:clamp(24px,7vw,34px)}
+  dialog{max-height:calc(100dvh - 24px)}
+}
+
+@media(max-width:620px){
+  .dashboard-secondary,.form-aside{grid-template-columns:minmax(0,1fr)}
+  .overview-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(2){border-right:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .section-heading{align-items:flex-start}
+  .section-heading>.text-button{flex:0 0 auto}
+  .pagination{flex-wrap:wrap}
+  .pagination label{flex:1 1 100%}
+  .profile-details,.paper-meta,.invoice-summary{grid-template-columns:minmax(0,1fr)}
+}
+
+@media(max-width:420px){
+  .topbar-context strong{display:none}
+  .topbar-tools{gap:2px}
+  .language-button{padding-inline:6px}
+  .page-heading h1{font-size:clamp(26px,8vw,32px)}
+  .section-heading,.table-controls,.task-list,.tabs,.pagination{padding-inline:16px}
+  .activity-row{margin-inline:16px}
+  .form-section,.document-paper{padding:clamp(18px,5vw,22px)}
+  .attachment-zone{align-items:flex-start}
+  .attachment-zone>.button{width:100%;margin-left:0}
+  .dialog-actions .button{flex:1 1 100%}
+  .auth-footer{font-size:clamp(14px,4.2vw,17px)}
+}
