@@ -38,3 +38,35 @@ html[data-theme="dark"] .create-options button:hover,html[data-theme="dark"] .te
 html[data-theme="dark"] .stat-top,html[data-theme="dark"] .quick-action strong,html[data-theme="dark"] .table-title strong{color:var(--ink)}
 html[data-theme="dark"] .status.draft,html[data-theme="dark"] .status.received{background:#263128}
 @media(max-width:760px){.auth-page{grid-template-columns:1fr}.auth-story{background-position:center 34%;min-height:210px}.auth-headline{display:none}.auth-story .brand-logo{width:145px}.auth-utilities{margin-bottom:26px}}
+
+/* Tembolic has a compact x-height, so supporting text needs a larger responsive scale. */
+:root{--text-supporting:clamp(13px,.76vw,14px);--text-interface:clamp(14px,.84vw,15px);--text-body:clamp(15px,.9vw,16px)}
+body{font-size:var(--text-body)}
+small,kbd,.nav-group>p,.language-button,.heading-date,.stat-bottom,.section-heading p,.task-copy small,.task-date,.section-footer>span,.activity-row small,.status,.quick-action small,.quick-all,.workspace-note,.page-footer,.page-footer button,th,th button,td small,.pagination,.back-link,.save-status,.field-error,.editor-bottom,.attachment-zone small,#attachment-error,.detail-pair>span:not(.status),.details-panel .field>span,.details-panel .field>label,.writing-note p,.paper-meta p>span,.timeline small,.create-options small,#search-results small,.search-heading,.profile-intro p,.notification-list small,.auth-hint,.auth-form .auth-small,.template-options small,.language-options small{font-size:var(--text-supporting)}
+.nav-item,.topbar-context,.button,.text-button,.stat-top,.tab,.task-copy strong,.activity-row strong,.quick-action strong,.recognition p,.recognition .button,.module-link,.table-search input,.table-scroll table,.table-title strong,.owner-cell,.row-action,.filter-summary,.inline-note,.field>span,.field>label,.body-section>label,.field input,.field select,.field textarea,.detail-pair,.writing-note h3,.timeline strong,.timeline p,.document-attachment,.create-options strong,#search-results a,.profile-details,.notification-list strong,#filter-error,#auth-error,#toast,.template-options strong,.language-options strong{font-size:var(--text-interface)}
+.auth-form>p,.dialog-intro,.help-content p,.global-search input,#body-editor{font-size:var(--text-body)}
+.stat-bottom,.task-copy small,.activity-row small,.quick-action small,.section-heading p,.recognition p,.dialog-intro,.auth-hint,.auth-form .auth-small{line-height:1.6}
+
+@media(max-width:760px){:root{--text-supporting:13px;--text-interface:14px;--text-body:15px}.nav-item,.sidebar .nav-item{font-size:14px}.page-heading p,.section-heading p,.task-copy small,.activity-row small,.quick-action small,.stat-bottom,.page-footer,.page-footer button,.pagination label,.pagination>span,.editor-bottom,.attachment-zone small,.save-status{font-size:13px!important}.task-copy strong,.activity-row strong,.quick-action strong,.tab,.text-button,.global-search input,.search-dialog #search-results a,.dialog-actions .button,.form-actions>div>.button{font-size:14px}}
+
+/* Readability and dark-mode refinements. */
+:root{--text-supporting:clamp(14px,.82vw,15px);--text-interface:clamp(15px,.9vw,16px);--text-body:clamp(16px,1vw,17px)}
+body{line-height:1.45}
+.sidebar .brand-logo{width:116px}
+.auth-headline p{font-size:clamp(28px,1.85vw,30px);line-height:1.35;margin-top:22px;max-width:620px}
+.document-paper h2{line-height:1.3;margin-bottom:20px}
+.document-body,#body-editor{font-size:var(--text-body);line-height:1.55}
+.document-body p{margin-bottom:11px}
+.paper-meta{font-size:var(--text-interface);line-height:1.35;padding-bottom:20px;margin-bottom:21px}
+.paper-meta p>span{margin-bottom:2px}
+.uniform-summary,.invoice-summary{line-height:1.5}
+.timeline small{line-height:1.45;margin-top:3px}
+.timeline p{line-height:1.45}
+.table-scroll table,.task-copy small,.activity-row small,.quick-action small,.section-heading p{line-height:1.4}
+
+html[data-theme="dark"]{--canvas:#111412;--panel:#1d211e;--line:#363d38;--muted:#b5beb6}
+html[data-theme="dark"] .surface,html[data-theme="dark"] .overview-stats,html[data-theme="dark"] .quick-create,html[data-theme="dark"] .recognition,html[data-theme="dark"] .document-paper,html[data-theme="dark"] dialog,html[data-theme="dark"] tbody tr,html[data-theme="dark"] .task-row,html[data-theme="dark"] .activity-row,html[data-theme="dark"] .quick-action{background:#1d211e}
+html[data-theme="dark"] th,html[data-theme="dark"] .editor-toolbar{background:#252a26}
+html[data-theme="dark"] .topbar,html[data-theme="dark"] .tabs,html[data-theme="dark"] .task-row,html[data-theme="dark"] .activity-row,html[data-theme="dark"] .quick-action,html[data-theme="dark"] .section-footer,html[data-theme="dark"] th,html[data-theme="dark"] td,html[data-theme="dark"] .paper-meta,html[data-theme="dark"] .rich-editor,html[data-theme="dark"] .editor-toolbar{border-color:#363d38}
+
+@media(max-width:760px){:root{--text-supporting:14px;--text-interface:15px;--text-body:16px}.sidebar .brand-logo{width:110px}}
